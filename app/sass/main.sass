@@ -1,0 +1,1102 @@
+@import "bourbon"
+@import "fonts"
+@import "libs"
+@import "vars"
+
+*::-webkit-input-placeholder
+  color: #666
+  opacity: 1
+
+*:-moz-placeholder
+  color: #666
+  opacity: 1
+
+*::-moz-placeholder
+  color: #666
+  opacity: 1
+
+*:-ms-input-placeholder
+  color: #666
+  opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+  color: #666
+
+body input:required:valid,
+body textarea:required:valid
+  color: #666
+
+@font-face
+  font-family: 'icomoon'
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx")
+  src: url("../fonts/icomoon/icomoon.eot?srf3rx#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.ttf?srf3rx") format("truetype"), url("../fonts/icomoon/icomoon.woff?srf3rx") format("woff"), url("../fonts/icomoon/icomoon.svg?srf3rx#icomoon") format("svg")
+  font-weight: normal
+  font-style: normal
+
+/* =======================================================
+ **
+ ** 	Template Style
+ **
+ ** =======================================================
+
+body
+  font-family: "Josefin Slab", Arial, serif
+  font-weight: 400
+  font-size: 16px
+  line-height: 1.7
+  color: #828282
+
+#page
+  position: relative
+  overflow-x: hidden
+  width: 100%
+  height: 100%
+  -webkit-transition: 0.5s
+  -o-transition: 0.5s
+  transition: 0.5s
+
+.offcanvas #page
+  overflow: hidden
+  position: absolute
+  &:after
+    -webkit-transition: 2s
+    -o-transition: 2s
+    transition: 2s
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: 101
+    background: rgba(0, 0, 0, 0.7)
+    content: ""
+
+a
+  color: #1d2f3b
+  -webkit-transition: 0.5s
+  -o-transition: 0.5s
+  transition: 0.5s
+  &:hover, &:active, &:focus
+    color: #1d2f3b
+    outline: none
+    text-decoration: none
+
+p
+  margin-bottom: 20px
+  font-size: 18px
+
+h1, h2, h3, h4, h5, h6, figure
+  color: #000
+  font-family: "Josefin Slab", Arial, serif
+  font-weight: 400
+  margin: 0 0 20px 0
+
+\::-webkit-selection, ::-moz-selection, ::selection
+  color: #fff
+  background: #1d2f3b
+
+.fh5co-nav
+  .top-menu
+    padding: 12px 0
+    width: 100%
+    float: left
+    position: relative
+    &:before
+      position: absolute
+      top: 0
+      bottom: 0
+      left: 0
+      right: 0
+      content: ''
+      background: #fbf2eb
+  #fh5co-logo
+    font-size: 50px
+    margin: 0
+    font-weight: 700
+    font-family: "Sacramento", cursive
+    width: 150px
+    height: 150px
+    margin: 0 auto
+    display: table
+    position: relative
+    &:before
+      position: absolute
+      top: -10px
+      bottom: 0
+      left: -10px
+      right: 0
+      width: 150px
+      height: 150px
+      background: #fbf2eb
+      content: ""
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      -ms-border-radius: 50%
+      border-radius: 50%
+    h1
+      font-family: "Sacramento", cursive !important
+      font-size: 50px
+      margin-bottom: 0
+      width: inherit
+      width: 150px
+      height: 150px
+      display: table-cell
+      vertical-align: middle
+      line-height: 32px
+      position: relative
+      border: 1px solid black
+      -webkit-border-radius: 50%
+      -moz-border-radius: 50%
+      -ms-border-radius: 50%
+      border-radius: 50%
+    a
+      span
+        color: #1d2f3b
+      small
+        font-family: "Josefin Slab", Arial, serif
+        font-size: 12px
+  a
+    padding: 5px 10px
+    color: #000
+  .menu-2
+    padding: 2em 0
+  ul
+    padding: 0
+    margin: 5px 0 0 0
+    li
+      padding: 0
+      margin: 0
+      list-style: none
+      display: inline
+      font-weight: 700
+      a
+        font-size: 14px
+        padding: 30px 15px
+        color: rgba(0, 0, 0, 0.7)
+        -webkit-transition: 0.5s
+        -o-transition: 0.5s
+        transition: 0.5s
+        &:hover, &:focus, &:active
+          color: black
+      &.has-dropdown
+        position: relative
+        .dropdown
+          width: 140px
+          -webkit-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75)
+          -moz-box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75)
+          box-shadow: 0px 14px 33px -9px rgba(0, 0, 0, 0.75)
+          z-index: 1002
+          visibility: hidden
+          opacity: 0
+          position: absolute
+          top: 30px
+          left: 0
+          text-align: left
+          background: #000
+          padding: 20px
+          -webkit-border-radius: 4px
+          -moz-border-radius: 4px
+          -ms-border-radius: 4px
+          border-radius: 4px
+          -webkit-transition: 0s
+          -o-transition: 0s
+          transition: 0s
+          &:before
+            bottom: 100%
+            left: 40px
+            border: solid transparent
+            content: " "
+            height: 0
+            width: 0
+            position: absolute
+            pointer-events: none
+            border-bottom-color: #000
+            border-width: 8px
+            margin-left: -8px
+          li
+            display: block
+            margin-bottom: 7px
+            &:last-child
+              margin-bottom: 0
+            a
+              padding: 2px 0
+              display: block
+              color: #999999
+              line-height: 1.2
+              text-transform: none
+              font-size: 13px
+              letter-spacing: 0
+              &:hover
+                color: #fff
+        &:hover a, &:focus a
+          color: #000
+      &.btn-cta a
+        padding: 30px 0px !important
+        color: #fff
+        span
+          background: #1d2f3b
+          padding: 4px 10px
+          display: -moz-inline-stack
+          display: inline-block
+          zoom: 1
+          *display: inline
+          -webkit-transition: 0.3s
+          -o-transition: 0.3s
+          transition: 0.3s
+          -webkit-border-radius: 100px
+          -moz-border-radius: 100px
+          -ms-border-radius: 100px
+          border-radius: 100px
+        &:hover span
+          -webkit-box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75)
+          -moz-box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75)
+          box-shadow: 0px 14px 20px -9px rgba(0, 0, 0, 0.75)
+      &.active > a
+        color: #000 !important
+        position: relative
+        &:before
+          position: absolute
+          bottom: 11px
+          left: 0
+          right: 0
+          content: ''
+          width: 40%
+          height: 1px
+          margin: 0 auto
+          background: #000
+  .fh5co-social-icons
+    text-align: right
+    li a
+      padding: inherit
+      padding-left: 5px
+      padding-right: 5px
+      i
+        font-size: 18px
+        color: #000
+
+#fh5co-counter, .fh5co-bg, .product, .featured, .insta
+  background-size: cover
+  background-position: top center
+  background-repeat: no-repeat
+  position: relative
+
+.fh5co-video
+  overflow: hidden
+  a
+    z-index: 1001
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-top: -45px
+    margin-left: -45px
+    width: 90px
+    height: 90px
+    display: table
+    text-align: center
+    background: #fff
+    -webkit-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
+    -moz-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
+    -ms-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
+    -o-box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
+    box-shadow: 0px 14px 30px -15px rgba(0, 0, 0, 0.75)
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    -ms-border-radius: 50%
+    border-radius: 50%
+    i
+      text-align: center
+      display: table-cell
+      vertical-align: middle
+      font-size: 40px
+  .overlay
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0, 0, 0, 0.3)
+    -webkit-transition: 0.5s
+    -o-transition: 0.5s
+    transition: 0.5s
+  &:hover
+    .overlay
+      background: rgba(0, 0, 0, 0.7)
+    a
+      -webkit-transform: scale(1.1)
+      -moz-transform: scale(1.1)
+      -ms-transform: scale(1.1)
+      -o-transform: scale(1.1)
+      transform: scale(1.1)
+
+#fh5co-hero
+  min-height: 600px
+  background: #fff url(../images/loader.gif) no-repeat center center
+  .btn
+    font-size: 24px
+    &.btn-primary
+      padding: 14px 30px !important
+  .flexslider
+    border: none
+    z-index: 1
+    margin-bottom: 0
+    .slides
+      position: relative
+      overflow: hidden
+      li
+        background-repeat: no-repeat
+        background-size: cover
+        background-position: center center
+        min-height: 600px
+        position: relative
+        &:after
+          position: absolute
+          top: 0
+          bottom: 0
+          left: 0
+          right: 0
+          content: ''
+          background: rgba(0, 0, 0, 0.4)
+          z-index: 1
+      .holder:after
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        content: ''
+        background: rgba(0, 0, 0, 0.4)
+        z-index: 1
+    .flex-control-nav
+      bottom: 80px
+      z-index: 1000
+      right: 20px
+      float: right
+      width: auto
+      li
+        display: block
+        margin-bottom: 10px
+        a
+          background: rgba(255, 255, 255, 0.3)
+          box-shadow: none
+          width: 12px
+          height: 12px
+          cursor: pointer
+          &.flex-active
+            cursor: pointer
+            background: transparent
+            border: 1px solid #fff
+    .flex-direction-nav
+      display: none
+    .slider-text
+      display: table
+      opacity: 0
+      min-height: 600px
+      z-index: 9
+      > .slider-text-inner
+        display: table-cell
+        vertical-align: middle
+        height: 600px
+        h1, h2
+          margin: 0
+          padding: 0
+          color: white
+        h1
+          margin-bottom: 20px
+          font-size: 40px
+          line-height: 1.3
+          font-weight: 400
+        h2
+          font-size: 20px
+          line-height: 1.5
+          margin-bottom: 30px
+          a
+            color: rgba(255, 255, 255, 0.6)
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3)
+        .heading-section
+          font-size: 50px
+        .ct a
+          color: #fff
+        .form-inline .form-group
+          width: 100% !important
+          margin-bottom: 10px
+          .form-control
+            width: 100%
+            background: #fff
+            border: none
+        .fh5co-lead
+          font-size: 20px
+          color: #fff
+          .icon-heart
+            color: #d9534f
+  .featured
+    width: 100%
+    display: table
+    height: 265px
+    position: relative
+    &:first-child
+      margin-bottom: 30px
+    .desc
+      display: table-cell
+      vertical-align: middle
+      height: 285px
+      padding: 40px
+      background: rgba(255, 255, 255, 0.8)
+      opacity: 0
+      -webkit-transition: 0.3s
+      -o-transition: 0.3s
+      transition: 0.3s
+      span
+        color: rgba(0, 0, 0, 0.5)
+      .date
+        display: block
+        margin-bottom: 20px
+    &:hover .desc
+      opacity: 1
+
+.fh5co-bg-section
+  background: rgba(29, 47, 59, 0.03)
+
+#fh5co-about, #fh5co-content, #fh5co-started, #fh5co-blog, #fh5co-blog-popular, #fh5co-contact, #fh5co-footer
+  padding: 7em 0
+  clear: both
+
+.fh5co-no-pd-top
+  padding-top: 1.5em !important
+
+#fh5co-blog-popular
+  padding-bottom: 0 !important
+  .fh5co-blog
+    margin-bottom: 0
+
+.fh5co-social-icons
+  margin: 0
+  padding: 0
+  li
+    margin: 0
+    padding: 0
+    list-style: none
+    display: -moz-inline-stack
+    display: inline-block
+    zoom: 1
+    *display: inline
+    a
+      display: -moz-inline-stack
+      display: inline-block
+      zoom: 1
+      *display: inline
+      color: #1d2f3b
+      padding-left: 10px
+      padding-right: 10px
+      i
+        font-size: 20px
+
+.fh5co-heading
+  margin-bottom: 5em
+  position: relative
+  &:after
+    position: absolute
+    top: 28px
+    bottom: 0
+    left: 0
+    right: 0
+    width: 100%
+    height: 1px
+    content: ''
+    background: black
+    z-index: -1
+  h2
+    font-size: 40px
+    margin-bottom: 20px
+    line-height: 1.5
+    color: #000
+    font-family: "Sacramento", cursive
+    span
+      padding: 20px 30px
+      border: 1px solid #000
+      z-index: 8
+      position: relative
+      &:after
+        position: absolute
+        top: -10px
+        bottom: 10px
+        left: -10px
+        right: 10px
+        content: ''
+        background: #fbf2eb
+        z-index: -1
+  p
+    font-size: 18px
+    line-height: 1.5
+    color: #828282
+  &.fh5co-heading-sidebar
+    margin-bottom: 2em
+    &:before
+      top: 20px
+    h2
+      font-size: 30px
+      span
+        padding: 10px 20px
+        border: 1px solid #000
+        z-index: 8
+        position: relative
+
+.fh5co-blog
+  margin-bottom: 3em
+  width: 100%
+  float: left
+  > a
+    display: block
+    position: relative
+    -webkit-transition: 0.5s
+    -o-transition: 0.5s
+    transition: 0.5s
+    img
+      width: 100%
+  .title
+    margin-bottom: 40px
+    &.title-pin h3
+      font-size: 34px
+      a
+        color: #000
+    h3
+      font-size: 24px
+      a
+        color: #000
+    .posted-on
+      display: inline-block
+      margin-bottom: 15px
+      position: relative
+      font-weight: 700
+      font-size: 15px
+    .category
+      text-transform: uppercase
+      letter-spacing: 3px
+      font-size: 13px
+      font-weight: 700
+      position: relative
+      margin-bottom: 10px
+      &:before
+        position: absolute
+        top: 5px
+        left: -120px
+        right: 0
+        bottom: 0
+        content: ''
+        width: 100px
+        height: 1px
+        background: rgba(0, 0, 0, 0.08)
+      &:after
+        position: absolute
+        top: 5px
+        right: -120px
+        bottom: 0
+        content: ''
+        width: 100px
+        height: 1px
+        background: rgba(0, 0, 0, 0.09)
+  .blog-text
+    margin-bottom: 30px
+    position: relative
+    width: 100%
+    padding: 30px
+    float: left
+    background: #fff
+    border: 1px solid rgba(0, 0, 0, 0.08)
+    -webkit-transition: 0.3s
+    -o-transition: 0.3s
+    transition: 0.3s
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.06)
+    -moz-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.06)
+    box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.06)
+    span
+      display: inline-block
+      margin-bottom: 20px
+      &.comment
+        float: right
+        a
+          color: rgba(0, 0, 0, 0.3)
+          i
+            color: #1d2f3b
+            padding-left: 7px
+    h3
+      font-size: 20px
+      margin-bottom: 10px
+      line-height: 1.5
+      font-weight: 600
+      a
+        color: black
+    .fh5co-social-icons
+      margin-top: 30px
+      li
+        a i
+          font-size: 30px
+        &:first-child
+          display: block
+          margin-bottom: 10px
+          text-transform: uppercase
+          letter-spacing: 3px
+          font-size: 13px
+
+.insta
+  height: 350px
+
+#sidebar
+  .side
+    margin-bottom: 6em
+    width: 100%
+    float: left
+  .blog-entry
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1)
+    width: 100%
+    float: left
+    padding: 20px 0
+    > a
+      width: 100%
+      float: left
+      position: relative
+      img
+        float: left
+        width: 90px
+        height: 90px
+        -webkit-border-radius: 50%
+        -moz-border-radius: 50%
+        -ms-border-radius: 50%
+        border-radius: 50%
+      .desc
+        padding-top: 10px
+        padding-left: 110px
+        .date
+          color: rgba(0, 0, 0, 0.4)
+        h3
+          font-size: 20px
+  .category
+    margin: 0
+    padding: 0
+    li
+      list-style: none
+      padding: 7px 0
+      a
+        color: #000
+        position: relative
+        padding-left: 20px
+        i
+          position: absolute
+          top: 0
+          left: 0
+  .insta
+    height: 250px
+
+.fh5co-staff
+  text-align: center
+  margin-bottom: 30px
+  img
+    width: 140px
+    height: 140px
+    margin: 0 auto
+    margin-bottom: 20px
+    -webkit-border-radius: 50%
+    -moz-border-radius: 50%
+    -ms-border-radius: 50%
+    border-radius: 50%
+  h3
+    font-size: 24px
+    margin-bottom: 5px
+  p
+    margin-bottom: 30px
+  .role
+    color: gray
+    margin-bottom: 30px
+    font-weight: normal
+    display: block
+
+#fh5co-footer
+  background: #efefef
+  .fh5co-footer-links
+    padding: 0
+    margin: 0
+    li
+      padding: 0
+      margin: 0
+      list-style: none
+      a
+        color: rgba(0, 0, 0, 0.5)
+        text-decoration: none
+        &:hover
+          text-decoration: underline
+  .fh5co-widget
+    margin-bottom: 30px
+    h3
+      margin-bottom: 15px
+      font-weight: bold
+      font-size: 15px
+      letter-spacing: 2px
+      text-transform: uppercase
+  .copyright .block
+    display: block
+
+#map
+  width: 100%
+  height: 500px
+  position: relative
+
+#fh5co-offcanvas
+  position: absolute
+  z-index: 1901
+  width: 270px
+  background: black
+  top: 0
+  right: 0
+  top: 0
+  bottom: 0
+  padding: 75px 40px 40px 40px
+  overflow-y: auto
+  display: none
+  -moz-transform: translateX(270px)
+  -webkit-transform: translateX(270px)
+  -ms-transform: translateX(270px)
+  -o-transform: translateX(270px)
+  transform: translateX(270px)
+  -webkit-transition: 0.5s
+  -o-transition: 0.5s
+  transition: 0.5s
+
+.offcanvas #fh5co-offcanvas
+  -moz-transform: translateX(0px)
+  -webkit-transform: translateX(0px)
+  -ms-transform: translateX(0px)
+  -o-transform: translateX(0px)
+  transform: translateX(0px)
+
+#fh5co-offcanvas
+  a
+    color: rgba(255, 255, 255, 0.5)
+    &:hover
+      color: rgba(255, 255, 255, 0.8)
+  ul
+    padding: 0
+    margin: 0
+    li
+      padding: 0
+      margin: 0
+      list-style: none
+      > ul
+        padding-left: 20px
+        display: none
+      &.offcanvas-has-dropdown
+        > a
+          display: block
+          position: relative
+          &:after
+            position: absolute
+            right: 0px
+            font-family: 'icomoon'
+            speak: none
+            font-style: normal
+            font-weight: normal
+            font-variant: normal
+            text-transform: none
+            line-height: 1
+            /* Better Font Rendering ===========
+            -webkit-font-smoothing: antialiased
+            -moz-osx-font-smoothing: grayscale
+            content: "\e921"
+            font-size: 20px
+            color: rgba(255, 255, 255, 0.2)
+            -webkit-transition: 0.5s
+            -o-transition: 0.5s
+            transition: 0.5s
+        &.active a:after
+          -webkit-transform: rotate(-180deg)
+          -moz-transform: rotate(-180deg)
+          -ms-transform: rotate(-180deg)
+          -o-transform: rotate(-180deg)
+          transform: rotate(-180deg)
+
+.uppercase
+  font-size: 14px
+  color: #000
+  margin-bottom: 10px
+  font-weight: 700
+  text-transform: uppercase
+
+.gototop
+  position: fixed
+  bottom: 20px
+  right: 20px
+  z-index: 999
+  opacity: 0
+  visibility: hidden
+  -webkit-transition: 0.5s
+  -o-transition: 0.5s
+  transition: 0.5s
+  &.active
+    opacity: 1
+    visibility: visible
+  a
+    width: 50px
+    height: 50px
+    display: table
+    background: rgba(0, 0, 0, 0.5)
+    color: #fff
+    text-align: center
+    -webkit-border-radius: 4px
+    -moz-border-radius: 4px
+    -ms-border-radius: 4px
+    border-radius: 4px
+    i
+      height: 50px
+      display: table-cell
+      vertical-align: middle
+    &:hover, &:active, &:focus
+      text-decoration: none
+      outline: none
+
+.fh5co-nav-toggle
+  width: 25px
+  height: 25px
+  cursor: pointer
+  text-decoration: none
+  top: 8px !important
+  &.active i
+    &::before, &::after
+      background: #444
+  &:hover, &:focus, &:active
+    outline: none
+    border-bottom: none !important
+  i
+    position: relative
+    display: inline-block
+    width: 25px
+    height: 2px
+    color: #252525
+    font: bold 14px/.4 Helvetica
+    text-transform: uppercase
+    text-indent: -55px
+    background: #252525
+    transition: all .2s ease-out
+    &::before, &::after
+      content: ''
+      width: 25px
+      height: 2px
+      background: #252525
+      position: absolute
+      left: 0
+      transition: all .2s ease-out
+  &.fh5co-nav-white > i
+    color: #fff
+    background: #000
+    &::before, &::after
+      background: #000
+  i
+    &::before
+      top: -7px
+    &::after
+      bottom: -7px
+  &:hover i
+    &::before
+      top: -10px
+    &::after
+      bottom: -10px
+  &.active i
+    background: transparent
+    &::before
+      top: 0
+      -webkit-transform: rotateZ(45deg)
+      -moz-transform: rotateZ(45deg)
+      -ms-transform: rotateZ(45deg)
+      -o-transform: rotateZ(45deg)
+      transform: rotateZ(45deg)
+      background: #fff
+    &::after
+      bottom: 0
+      -webkit-transform: rotateZ(-45deg)
+      -moz-transform: rotateZ(-45deg)
+      -ms-transform: rotateZ(-45deg)
+      -o-transform: rotateZ(-45deg)
+      transform: rotateZ(-45deg)
+      background: #fff
+  position: absolute
+  right: 0px
+  top: 65px
+  z-index: 21
+  padding: 6px 0 0 0
+  display: block
+  margin: 0 auto
+  display: none
+  height: 44px
+  width: 44px
+  z-index: 2001
+  border-bottom: none !important
+
+.btn
+  margin-right: 4px
+  margin-bottom: 4px
+  font-family: "Josefin Slab", Arial, serif
+  font-size: 16px
+  font-weight: 400
+  -webkit-border-radius: 4px
+  -moz-border-radius: 4px
+  -ms-border-radius: 4px
+  border-radius: 4px
+  -webkit-transition: 0.5s
+  -o-transition: 0.5s
+  transition: 0.5s
+  padding: 8px 20px
+  &.btn-md
+    padding: 8px 20px !important
+  &.btn-lg
+    padding: 18px 36px !important
+  &:hover, &:active, &:focus
+    box-shadow: none !important
+    outline: none !important
+
+.btn-primary
+  background: #1d2f3b
+  color: #fff
+  border: 2px solid #1d2f3b
+  &:hover, &:focus, &:active
+    background: #253d4c !important
+    border-color: #253d4c !important
+  &.btn-outline
+    background: transparent
+    color: #1d2f3b
+    border: 2px solid #1d2f3b
+    &:hover, &:focus, &:active
+      background: #1d2f3b
+      color: #fff
+
+.btn-success
+  background: #5cb85c
+  color: #fff
+  border: 2px solid #5cb85c
+  &:hover, &:focus, &:active
+    background: #4cae4c !important
+    border-color: #4cae4c !important
+  &.btn-outline
+    background: transparent
+    color: #5cb85c
+    border: 2px solid #5cb85c
+    &:hover, &:focus, &:active
+      background: #5cb85c
+      color: #fff
+
+.btn-info
+  background: #5bc0de
+  color: #fff
+  border: 2px solid #5bc0de
+  &:hover, &:focus, &:active
+    background: #46b8da !important
+    border-color: #46b8da !important
+  &.btn-outline
+    background: transparent
+    color: #5bc0de
+    border: 2px solid #5bc0de
+    &:hover, &:focus, &:active
+      background: #5bc0de
+      color: #fff
+
+.btn-warning
+  background: #f0ad4e
+  color: #fff
+  border: 2px solid #f0ad4e
+  &:hover, &:focus, &:active
+    background: #eea236 !important
+    border-color: #eea236 !important
+  &.btn-outline
+    background: transparent
+    color: #f0ad4e
+    border: 2px solid #f0ad4e
+    &:hover, &:focus, &:active
+      background: #f0ad4e
+      color: #fff
+
+.btn-danger
+  background: #d9534f
+  color: #fff
+  border: 2px solid #d9534f
+  &:hover, &:focus, &:active
+    background: #d43f3a !important
+    border-color: #d43f3a !important
+  &.btn-outline
+    background: transparent
+    color: #d9534f
+    border: 2px solid #d9534f
+    &:hover, &:focus, &:active
+      background: #d9534f
+      color: #fff
+
+.btn-outline
+  background: none
+  border: 2px solid gray
+  font-size: 16px
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: 0.3s
+  &:hover, &:focus, &:active
+    box-shadow: none
+
+.btn.with-arrow
+  position: relative
+  -webkit-transition: 0.3s
+  -o-transition: 0.3s
+  transition: 0.3s
+  i
+    visibility: hidden
+    opacity: 0
+    position: absolute
+    right: 0px
+    top: 50%
+    margin-top: -8px
+    -webkit-transition: 0.2s
+    -o-transition: 0.2s
+    transition: 0.2s
+  &:hover
+    padding-right: 50px
+    i
+      color: #fff
+      right: 18px
+      visibility: visible
+      opacity: 1
+
+.form-control
+  box-shadow: none
+  background: transparent
+  border: 2px solid rgba(0, 0, 0, 0.1)
+  height: 54px
+  font-size: 18px
+  font-weight: 300
+  &:active, &:focus
+    outline: none
+    box-shadow: none
+    border-color: #1d2f3b
+
+.row-pb-md
+  padding-bottom: 4em !important
+
+.row-pb-sm
+  padding-bottom: 2em !important
+
+.col-padded-right
+  padding-right: 2em !important
+
+.nopadding
+  padding: 0 !important
+  margin: 0 !important
+
+.fh5co-loader
+  position: fixed
+  left: 0px
+  top: 0px
+  width: 100%
+  height: 100%
+  z-index: 9999
+  background: url(../images/loader.gif) center no-repeat #fff
+
+.js .animate-box
+  opacity: 0
+
+/*# sourceMappingURL=style.css.map
+
+@import "media"
+// Всегда в конце
