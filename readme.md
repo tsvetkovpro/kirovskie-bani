@@ -1,5 +1,5 @@
 
 
 <p>
-	<img src="bani.jpg" alt="bani">
+	<img src="ban1.jpg" alt="bani">
 </p>
